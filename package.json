@@ -1,22 +1,26 @@
 {
-  "name": "hexlet-brain-games",
-  "version": "1.0.0",
-  "description": "Brain games",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "brain-games": "src/bin/brain-games.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iashchuk/hexlet-brain-games.git"
-  },
-  "author": "Vitalii Iashchuk",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iashchuk/hexlet-brain-games/issues"
-  },
-  "homepage": "https://github.com/iashchuk/hexlet-brain-games#readme"
+    "name": "hexlet-brain-games",
+    "version": "1.0.0",
+    "description": "Brain games",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "bin": {
+        "brain-games": "bin/brain-games.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iashchuk/hexlet-brain-games.git"
+    },
+    "author": "Vitalii Iashchuk",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/iashchuk/hexlet-brain-games/issues"
+    },
+    "homepage": "https://github.com/iashchuk/hexlet-brain-games#readme",
+    "devDependencies": {
+        "cross-env": "7.0.0"
+    }
 }
