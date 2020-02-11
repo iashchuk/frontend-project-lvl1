@@ -22,5 +22,8 @@
     "homepage": "https://github.com/iashchuk/hexlet-brain-games#readme",
     "devDependencies": {
         "cross-env": "7.0.0"
+    },
+    "dependencies": {
+        "readline-sync": "^1.4.10"
     }
 }
