@@ -1,11 +1,39 @@
 import readlineSync from 'readline-sync';
 
-const getName = () => readlineSync.question('May I have your name? ');
-const printHello = (name) => console.log(`Hello, ${name}!`);
+const MAX_ROUNDS = 3;
+const getWelcomeText = () => '\nWelcome to the Brain Games!\n';
+const getGreeting = (name) => `Hello, ${name}!`;
+const getCongratulationText = (name) => `Congratulations, ${name}!`;
+const getLoseText = (name, answer, correctAnswer) =>
+  `"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}". Let's try again, ${name}!`;
+const getQuestionText = (question) => `Question: ${question}`;
+const getCorrectAnswerText = () => 'Correct!';
 
-const greetUser = () => {
+const getName = () => readlineSync.question('May I have your name? ');
+const getAnswer = () => readlineSync.question('Your answer: ');
+const printText = (text) => console.log(text);
+
+const engine = (gameRules, getRound) => {
+  let round = 1;
+  printText(getWelcomeText());
   const name = getName();
-  printHello(name);
+  printText(getGreeting(name));
+  printText(gameRules);
+
+  while (round <= MAX_ROUNDS) {
+    const [question, correctAnswer] = getRound();
+    printText(getQuestionText(question));
+    const answer = getAnswer();
+
+    if (answer !== correctAnswer) {
+      return printText(getLoseText(name, answer, correctAnswer));
+    }
+
+    printText(getCorrectAnswerText());
+    round += 1;
+  }
+
+  return printText(getCongratulationText(name));
 };
 
-export default greetUser;
+export default engine;
