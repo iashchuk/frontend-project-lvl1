@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import generateRandomNumber from '../utils/generateRandomNumber.js';
 
-const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameRules = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 
