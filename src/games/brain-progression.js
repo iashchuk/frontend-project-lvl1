@@ -14,20 +14,21 @@ const createProgression = (start, gap, length = 10) => {
 
 const getRoundInfo = (progression) => {
   const questionIndex = generateRandomNumber(0, progression.length - 1);
-  const answer = String(progression[questionIndex]);
+  const correctAnswer = String(progression[questionIndex]);
   const question = [
     ...progression.slice(0, questionIndex),
     '..',
     ...progression.slice(questionIndex + 1),
   ].join(' ');
 
-  return [question, answer];
+  return [question, correctAnswer];
 };
 
 const getRound = () => {
   const startProgression = generateRandomNumber();
   const gapProgression = generateRandomNumber(3, 20);
   const progression = createProgression(startProgression, gapProgression);
+
   return getRoundInfo(progression);
 };
 

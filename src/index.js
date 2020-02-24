@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 
 const MAX_ROUNDS = 3;
+const START_ROUND = 1;
+
 const getWelcomeText = () => '\nWelcome to the Brain Games!\n';
 const getGreeting = (name) => `Hello, ${name}!`;
 const getCongratulationText = (name) => `Congratulations, ${name}!`;
@@ -11,10 +13,11 @@ const getCorrectAnswerText = () => 'Correct!';
 
 const getName = () => readlineSync.question('May I have your name? ');
 const getAnswer = () => readlineSync.question('Your answer: ');
+
 const printText = (text) => console.log(text);
 
 const engine = (gameRules, getRound) => {
-  let round = 1;
+  let round = START_ROUND;
   printText(getWelcomeText());
   const name = getName();
   printText(getGreeting(name));
@@ -26,14 +29,15 @@ const engine = (gameRules, getRound) => {
     const answer = getAnswer();
 
     if (answer !== correctAnswer) {
-      return printText(getLoseText(name, answer, correctAnswer));
+      printText(getLoseText(name, answer, correctAnswer));
+      return;
     }
 
     printText(getCorrectAnswerText());
     round += 1;
   }
 
-  return printText(getCongratulationText(name));
+  printText(getCongratulationText(name));
 };
 
 export default engine;
