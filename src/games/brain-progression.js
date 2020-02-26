@@ -13,13 +13,11 @@ const createProgression = (start, gap, length = 10) => {
 };
 
 const getRoundInfo = (progression) => {
-  const questionIndex = generateRandomNumber(0, progression.length - 1);
-  const correctAnswer = String(progression[questionIndex]);
-  const question = [
-    ...progression.slice(0, questionIndex),
-    '..',
-    ...progression.slice(questionIndex + 1),
-  ].join(' ');
+  const info = [...progression];
+  const questionIndex = generateRandomNumber(0, info.length - 1);
+  const correctAnswer = String(info[questionIndex]);
+  info[questionIndex] = '..';
+  const question = info.join(' ');
 
   return [question, correctAnswer];
 };
