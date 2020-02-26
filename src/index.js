@@ -16,11 +16,17 @@ const getAnswer = () => readlineSync.question('Your answer: ');
 
 const printText = (text) => console.log(text);
 
-const engine = (gameRules, getRound) => {
-  let round = START_ROUND;
+export const showGreeting = () => {
   printText(getWelcomeText());
   const name = getName();
   printText(getGreeting(name));
+  return name;
+};
+
+const engine = (gameRules, getRound) => {
+  let round = START_ROUND;
+
+  const name = showGreeting();
   printText(gameRules);
 
   while (round <= MAX_ROUNDS) {
