@@ -1,6 +1,6 @@
 {
   "name": "hexlet-brain-games",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Brain games",
   "main": "src/index.js",
   "type": "module",

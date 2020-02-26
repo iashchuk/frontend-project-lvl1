@@ -3,7 +3,13 @@ import generateRandomNumber from '../utils/generateRandomNumber.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
-const getGcd = (a, b) => (a % b ? getGcd(b, a % b) : Math.abs(b));
+const getGcd = (number1, number2) => {
+  const remainder = number1 % number2;
+  if (remainder === 0) {
+    return Math.abs(number2);
+  }
+  return getGcd(number2, remainder);
+};
 
 const getRound = () => {
   const number1 = generateRandomNumber();
