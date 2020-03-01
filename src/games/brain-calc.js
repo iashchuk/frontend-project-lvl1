@@ -1,7 +1,7 @@
-import engine from '../index.js';
+import runEngine from '../index.js';
 import generateRandomNumber from '../utils/generateRandomNumber.js';
 
-const gameRules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 
@@ -18,13 +18,13 @@ const getRound = () => {
   const operator = operators[randomOperationIndex];
 
   const question = `${number1} ${operator} ${number2}`;
-  const correctAnswer = String(operations[operator](number1, number2));
+  const correctAnswer = operations[operator](number1, number2).toString();
 
   return [question, correctAnswer];
 };
 
 const runGame = () => {
-  engine(gameRules, getRound);
+  runEngine(description, getRound);
 };
 
 export default runGame;
