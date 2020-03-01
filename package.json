@@ -1,6 +1,6 @@
 {
   "name": "hexlet-brain-games",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "Brain games",
   "main": "src/index.js",
   "type": "module",
@@ -25,12 +25,15 @@
   },
   "homepage": "https://github.com/iashchuk/hexlet-brain-games#readme",
   "devDependencies": {
-    "cross-env": "7.0.0"
-  },
-  "dependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.1"
+  },
+  "dependencies": {
     "readline-sync": "^1.4.10"
-  }
+  },
+  "keywords": [
+    "hexlet",
+    "brain-games"
+  ]
 }
