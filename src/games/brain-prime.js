@@ -18,10 +18,10 @@ const isPrime = (number) => {
 };
 
 const getRound = () => {
-  const question = generateRandomNumber().toString();
+  const question = generateRandomNumber();
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  return [question, correctAnswer];
+  return [question.toString(), correctAnswer];
 };
 
 const runGame = () => {

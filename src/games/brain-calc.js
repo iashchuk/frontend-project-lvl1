@@ -14,8 +14,8 @@ const operations = {
 const getRound = () => {
   const number1 = generateRandomNumber();
   const number2 = generateRandomNumber();
-  const randomOperationIndex = generateRandomNumber(0, operators.length - 1);
-  const operator = operators[randomOperationIndex];
+  const operationIndex = generateRandomNumber(0, operators.length - 1);
+  const operator = operators[operationIndex];
 
   const question = `${number1} ${operator} ${number2}`;
   const correctAnswer = operations[operator](number1, number2).toString();
